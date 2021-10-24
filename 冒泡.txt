@@ -3,7 +3,7 @@
 
 using namespace std;
 
-bool bubbleSort(int array[], size_t arrLen) {
+bool bubbleSort(int array[], size_t arrLen) {    
     if (arrLen < 0) {
         cout << "Please check your input." << endl;
         return false;
@@ -12,10 +12,10 @@ bool bubbleSort(int array[], size_t arrLen) {
 
     for (int orderedNum = 0; orderedNum < arrLen; ++orderedNum) {
         bool isExchanged = false;
-        for (int i = 0; i < arrLen - orderedNum -1; ++i) {
+        for (int i = 0; i < arrLen - orderedNum -1; ++i) {   //提前结束冒泡循环的标志语
             if (array[i] > array[i+1]) {
                 int temp = array[i];
-                array[i] = array[i+1];
+                array[i] = array[i+1];    //交换
                 array[i+1] = temp;
                 isExchanged = true;
             }
