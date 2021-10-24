@@ -13,9 +13,9 @@ using namespace std;
 //}
 //int main(){
 // long n;
-// cout << "ÇëÊäÈënµÄÖµ£º" << endl;
+// cout << "è¯·è¾“å…¥nçš„å€¼ï¼š" << endl;
 // cin >> n;
-// cout <<"nµÄ½×³ËÎª£º" << Factorial(n) << endl;
+// cout <<"nçš„é˜¶ä¹˜ä¸ºï¼š" << Factorial(n) << endl;
 // return 0;
 //}
 
