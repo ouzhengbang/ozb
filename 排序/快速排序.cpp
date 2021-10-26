@@ -195,7 +195,7 @@ void QuickSort(int array[], int low, int high) {
 // }
 
 int main() {
-    int array[] = {49, 38, 65, 97, 76, 13, 27, 49, 10};
+    int array[] = {10,30,20,10,5,23,33,18,8};
     int size    = sizeof(array) / sizeof(int);
 
     // 打印数据
