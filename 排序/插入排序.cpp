@@ -9,11 +9,11 @@ bool insertSort(int array[], size_t arrLen) {
         return false;
     }
 
-    for (int orderedNum = 1; orderedNum < arrLen; ++orderedNum) {    //查找
+    for (int orderedNum = 1; orderedNum < arrLen; ++orderedNum) {    ////暂存需要插入元素
         int insertValue = array[orderedNum];
         int orderedIndex = orderedNum - 1;      //数据位移
         for (; orderedIndex >= 0; --orderedIndex) {
-            if (insertValue < array[orderedIndex]) {
+            if (insertValue < array[orderedIndex]) {      
                 array[orderedIndex + 1] = array[orderedIndex];
             }
             else {
@@ -32,10 +32,11 @@ bool insertSort_Sen(int array[], size_t arrLen) {
         return false;
     }
 
-    for (int orderedNum = 1; orderedNum < arrLen; ++orderedNum) {
+    for (int orderedNum = 1; orderedNum < arrLen; ++orderedNum) {                
+                                                                         //从右向左比较元素
         int insertValue = array[orderedNum];
         int orderedIndex = orderedNum - 1;
-        while(orderedIndex >=0 && array[orderedIndex] > insertValue) {
+        while(orderedIndex >=0 && array[orderedIndex] > insertValue) {    //进行检查，如果orderednum小于前面的数，则将前一个数往后移，若比前一个数大，则结束此次循环
            array[orderedIndex + 1] = array[orderedIndex];
            --orderedIndex;
         }
@@ -46,7 +47,7 @@ bool insertSort_Sen(int array[], size_t arrLen) {
 }
 
 void printArray(int array[], int arrLen) {
-    for (int i = 0; i < arrLen; ++i) {
+    for (int i = 0; i < arrLen; ++i) {              //输出数组
         cout << array[i] << " ";
     }
     cout << endl;
