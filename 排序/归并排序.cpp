@@ -11,17 +11,17 @@ bool merge(int array[], size_t arrStart, size_t arrMiddle, size_t arrEnd) {
     }
 
     int *temp = new int(arrLen);
-    int i = arrStart;
+    int i = arrStart;                       //给temp内存空间 声明 arrStart和arrMiddle 初始化tempIndex为0
     int j = arrMiddle;
     int tempIndex = 0;
 
     while (i < arrMiddle && j < arrEnd) {
-        if (array[i] > array[j]) {
+        if (array[i] > array[j]) {                    //载入arrMiddle数据进tempIndex
             temp[tempIndex] = array[j];
             ++j;
         }
         else {
-            temp[tempIndex] = array[i];
+            temp[tempIndex] = array[i];       //载入arrStart数据进tempIndex
             ++i;
         }
         ++tempIndex;
@@ -57,13 +57,13 @@ bool mergeSort(int array[], size_t arrStart, size_t arrEnd) {
 
     int middle = arrStart + floor(arrLen / 2);
 
-    mergeSort(array, arrStart, middle);
-    mergeSort(array, middle, arrEnd);
-    return merge(array, arrStart, middle, arrEnd);
+    mergeSort(array, arrStart, middle);      //左有序
+    mergeSort(array, middle, arrEnd);      //右有序
+    return merge(array, arrStart, middle, arrEnd);    //合并
 }
 
 void printArray(int array[], int arrLen) {
-    for (int i = 0; i < arrLen; ++i) {
+    for (int i = 0; i < arrLen; ++i) {          //输出数组
         cout << array[i] << " ";
     }
     cout << endl;
