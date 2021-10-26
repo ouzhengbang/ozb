@@ -8,7 +8,7 @@ bool coutingSort(int array[], size_t arrLen) {
         return true;
     }
 
-    //Find maximum and minimal value
+                                              //求最大值和最小值
     int max = array[0];
     int min = array[0];
 
@@ -22,22 +22,22 @@ bool coutingSort(int array[], size_t arrLen) {
         }
     }
 
-    // Create counting buckets
+                                                            // 创建桶
     int *countingBuckets = new int[max - min + 1]();
 
-    // Count number of values in array
+                                                             // 计数数组中值的数量
     for (size_t j = 0; j < arrLen; ++j)
     {
         ++countingBuckets[array[j] - min];
     }
 
-    // Accumulate coutingBuckets to find the last ordered location of value in array
+                                                          // 累积桶数以查找数组中值的最后有序位置
     for (size_t k = 1; k < (max - min + 1); ++k)
     {
         countingBuckets[k] += countingBuckets[k-1];
     }
 
-    //Traverse the array in reversed order
+                                                         //以相反的顺序遍历数组
     int *tempArray = new int[arrLen]();
     for (int l = arrLen - 1; l >= 0; --l)
     {
@@ -49,15 +49,15 @@ bool coutingSort(int array[], size_t arrLen) {
         array[m] = tempArray[m];
     }
 
-    delete [] countingBuckets;
-    delete [] tempArray;
+    delete [] countingBuckets;             //删除桶
+    delete [] tempArray;                     //删除数组
 
     
     return true;
 }
 
 void printArray(int array[], int arrLen) {
-    for (int i = 0; i < arrLen; ++i) {
+    for (int i = 0; i < arrLen; ++i) {             //输出数组
         cout << array[i] << " ";
     }
     cout << endl;
